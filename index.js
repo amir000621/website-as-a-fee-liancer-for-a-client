@@ -52,6 +52,14 @@ topButton.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+function validatePhone(input) {
+    const phone = input.value;
+    if (!/^\d{10}$/.test(phone)) {
+      alert("Please enter a valid 10-digit phone number.");
+      input.focus();
+    }
+  }
+
 
 
 

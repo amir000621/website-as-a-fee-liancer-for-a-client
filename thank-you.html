@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Electronics Repair Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+            line-height: 1.6;
+        }
+
+        .container {
+            min-height: 100vh;
+            padding: 3rem 1rem;
+        }
+
+        .content-wrapper {
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            border: 1px solid #e5e7eb;
+            margin-bottom: 2rem;
+        }
+
+        .card-header {
+            padding: 1.5rem 1.5rem 1rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 4rem;
+            height: 4rem;
+            background-color: #dcfce7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: #16a34a;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 1.125rem;
+            color: #6b7280;
+        }
+
+        .card-content {
+            padding: 0 1.5rem 1.5rem;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .info-icon {
+            color: #2563eb;
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+
+        .info-title {
+            font-weight: 600;
+            color: #1e3a8a;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-text {
+            color: #1e40af;
+            font-size: 0.875rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-grid{
+            display: flex;
+            flex-direction: row !important;
+            justify-content: space-between;
+        }
+
+        @media (min-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .feature-item h4 {
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-item p {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .separator {
+            height: 1px;
+            background-color: #e5e7eb;
+            margin: 1.5rem 0;
+        }
+
+        .button-section {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .button-section h3 {
+            font-weight: 600;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        @media(max-width:480px){
+              .contact-grid {
+               display: flex;
+               flex-direction: column !important;
+               /* align-items: center; */
+            }
+        }
+
+        @media (min-width: 640px) {
+            .button-group {
+                flex-direction: row;
+            }
+
+             .contact-grid {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+            }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.875rem;
+        }
+
+        .btn-primary {
+            background-color: #111827;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #374151;
+        }
+
+        .btn-outline {
+            background-color: white;
+            color: #374151;
+            border: 1px solid #d1d5db;
+        }
+
+        .btn-outline:hover {
+            background-color: #f9fafb;
+        }
+
+        .btn-icon {
+            margin-right: 0.5rem;
+        }
+
+        /* .contact-grid {
+           display: flex;
+           flex-direction: row;
+           justify-content: space-between;
+        } */
+
+        @media (min-width: 768px) {
+            .contact-grid {
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: #f3f4f6;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            font-size: 1.25rem;
+        }
+
+        .contact-info p:first-child {
+            font-weight: 500;
+            color: #111827;
+        }
+
+        .contact-info p:last-child {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content-wrapper">
+            <!-- Main Thank You Card -->
+            <div class="card fade-in">
+                <div class="card-header">
+                    <div class="success-icon">✓</div>
+                    <h1 class="card-title">Thank You for Your Inquiry!</h1>
+                    <p class="card-description">
+                        We've received your electronics repair request and will get back to you soon.
+                    </p>
+                </div>
+                <div class="card-content">
+                    <div class="info-box">
+                        <div class="info-box-content">
+                            <span class="info-icon">🕒</span>
+                            <div>
+                                <h3 class="info-title">What happens next?</h3>
+                                <p class="info-text">
+                                    Our technicians will review your request and contact you within 24 hours to discuss your repair
+                                    needs and provide a quote.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h4>Emergency Repairs</h4>
+                            <p>
+                                Need urgent assistance? Call us directly for same-day service availability.
+                            </p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>Free Diagnostics</h4>
+                            <p>
+                                We offer free diagnostic services for most electronic devices and gadgets.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <div class="button-section">
+                        <!-- <h3>Need immediate assistance?</h3> -->
+                        <div class="button-group">
+                            <a href="/" class="btn btn-primary">
+                                <span class="btn-icon">🏠</span>
+                                Return to Homepage
+                            </a>
+                            <!-- <a href="/services" class="btn btn-outline">
+                                <span class="btn-icon">🔧</span>
+                                View Our Services
+                            </a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information Card -->
+            <div class="card fade-in">
+                <div class="card-header">
+                    <h2 class="card-title" style="font-size: 1.125rem;">Contact Information</h2>
+                    <p class="card-description" style="font-size: 1rem;">Get in touch with us directly if you have any questions</p>
+                </div>
+                <div class="card-content">
+                    <div class="contact-grid">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-info">
+                                <p>919650343666</p>
+                                <p>24*7</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">✉️</div>
+                            <div class="contact-info">
+                                <p>mselectronic36666@gmail.com</p>
+                                <p>24/7 Email Support</p>
+                            </div>
+                        </div>
+
+                        <!-- <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-info">
+                                <p></p>
+                                <p>f-450, Street No. 19, opposite classic marriage home Khazoori Khas Delhi, 110094</p>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <p>&copy; MS Electronics. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling and enhanced interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add fade-in animation to cards with delay
+            const cards = document.querySelectorAll('.card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+            });
+
+            // Add click tracking for buttons (optional analytics)
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    console.log('Button clicked:', this.textContent.trim());
+                    // You can add analytics tracking here
+                });
+            });
+
+            // Add hover effects for contact items
+            const contactItems = document.querySelectorAll('.contact-item');
+            contactItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                    this.style.transition = 'transform 0.2s ease';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Make contact info clickable
+            const phoneElement = document.querySelector('.contact-item:first-child .contact-info p:first-child');
+            const emailElement = document.querySelector('.contact-item:nth-child(2) .contact-info p:first-child');
+            
+            if (phoneElement) {
+                phoneElement.style.cursor = 'pointer';
+                phoneElement.addEventListener('click', function() {
+                    window.location.href = 'tel:' + this.textContent.replace(/[^\d]/g, '');
+                });
+            }
+            
+            if (emailElement) {
+                emailElement.style.cursor = 'pointer';
+                emailElement.addEventListener('click', function() {
+                    window.location.href = 'mailto:' + this.textContent;
+                });
+            }
+        });
+
+        // Optional: Add a simple notification system
+        function showNotification(message, type = 'info') {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 12px 24px;
+                background: ${type === 'success' ? '#10b981' : '#3b82f6'};
+                color: white;
+                border-radius: 6px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 1000;
+                animation: slideIn 0.3s ease;
+            `;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Add CSS for notification animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from {
+                    transform: translateX(100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
