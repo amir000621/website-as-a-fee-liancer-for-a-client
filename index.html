@@ -125,12 +125,15 @@
                         
                         <input type="hidden" name="access_key" value="ad90ec24-7d64-4f9d-a653-9f887f35cf82">
                          <!-- <input type="hidden" name="notification" value="amiransari621621@gmail.com"/> -->
+                          <!-- disable web3forms success page -->
+                        <input type="hidden" name="_template" value="table">
+                        
                         <input type="text" name="name" placeholder="your name" class="form-inputs" required>
                         <input type="email" name="email" placeholder="your email" class="form-inputs" required>
                         <input type="tel" pattern="\d{10}" maxlength="10" name="number" placeholder="phone number" class="form-inputs" required>
                         <textarea name="message" placeholder="Message" class="form-inputs" required></textarea>
                         <!-- Redirect to your custom Thank You page -->
-                        <input type="hidden" name="redirect" value="https://website-for-a-client.vercel.app/thank-you.html"/>
+                        <input type="hidden" name="_redirect" value="https://website-for-a-client.vercel.app/thank-you.html"/>
 
                         <button type="submit" class="form-submit">submit </button>
                     </form>
